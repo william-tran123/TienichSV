@@ -1,0 +1,180 @@
+<div th:fragment="content">
+
+    <style>
+        .page-title{
+            font-size:24px;
+            font-weight:700;
+            color:#004a99;
+            margin-bottom:20px;
+            text-align:center;
+        }
+
+        .student-info{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:15px;
+            margin-bottom:30px;
+        }
+
+        .info-box{
+            background:#f8fafc;
+            border-left:4px solid #004a99;
+            padding:14px;
+            border-radius:8px;
+            font-size:14px;
+        }
+
+        .info-label{
+            font-weight:600;
+            color:#64748b;
+        }
+
+        .alert-box{
+            background:#fef3c7;
+            border-left:5px solid #f59e0b;
+            padding:15px;
+            border-radius:8px;
+            margin-bottom:25px;
+            color:#92400e;
+            font-weight:500;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        th{
+            background:#004a99;
+            color:white;
+            padding:14px;
+            font-size:14px;
+            text-align:left;
+        }
+
+        td{
+            border:1px solid #e2e8f0;
+            padding:12px;
+            font-size:14px;
+        }
+
+        tr:nth-child(even){
+            background:#f8fafc;
+        }
+
+        .status-registered{
+            color:#16a34a;
+            font-weight:600;
+            background:#f0fdf4;
+            padding:4px 10px;
+            border-radius:20px;
+            display:inline-block;
+        }
+
+        .note{
+            margin-top:25px;
+            padding:15px;
+            background:#f1f5f9;
+            border-radius:8px;
+            font-size:14px;
+            color:#475569;
+        }
+
+        .btn-disabled{
+            background:#94a3b8;
+            color:white;
+            padding:10px 20px;
+            border:none;
+            border-radius:6px;
+            cursor: not-allowed;
+            margin-top:15px;
+        }
+    </style>
+
+    <div class="page-title">
+        ĐĂNG KÝ MÔN HỌC
+    </div>
+
+    <div class="student-info">
+        <div class="info-box">
+            <div class="info-label">Mã sinh viên</div>
+            2251012056
+        </div>
+        <div class="info-box">
+            <div class="info-label">Họ và tên</div>
+            Trần Lê Phương Minh
+        </div>
+        <div class="info-box">
+            <div class="info-label">Ngành</div>
+            Công nghệ thông tin
+        </div>
+        <div class="info-box">
+            <div class="info-label">Học kỳ</div>
+            Học kỳ 1 - 2026-2027
+        </div>
+    </div>
+
+    <!-- Thông báo -->
+    <div class="alert-box">
+        <strong>⚠️ Đăng ký môn học đã kết thúc.</strong><br>
+        Bạn đã hoàn tất đăng ký môn học cho học kỳ này. Không thể chỉnh sửa hoặc đăng ký thêm.
+    </div>
+
+    <h3 style="color:#1e40af; margin-bottom:15px;">📋 Danh sách môn học đã đăng ký</h3>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Mã môn</th>
+            <th>Tên môn học</th>
+            <th>Số tín chỉ</th>
+            <th>Lớp học</th>
+            <th>Trạng thái</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>ITEC5501</td>
+            <td>Lập trình ứng dụng nâng cao</td>
+            <td>4</td>
+            <td>IT2202</td>
+            <td><span class="status-registered">Đã đăng ký</span></td>
+        </tr>
+        <tr>
+            <td>ITEC2604</td>
+            <td>Quản lí hệ thống mạng</td>
+            <td>4</td>
+            <td>IM2202</td>
+            <td><span class="status-registered">Đã đăng ký</span></td>
+        </tr>
+        <tr>
+            <td>ITEC2512</td>
+            <td>Bảo trì hệ thống</td>
+            <td>4</td>
+            <td>CS2202</td>
+            <td><span class="status-registered">Đã đăng ký</span></td>
+        </tr>
+        <tr>
+            <td>ITEC2043</td>
+            <td>Lập trình dữ liệu số</td>
+            <td>4</td>
+            <td>IT2202</td>
+            <td><span class="status-registered">Đã đăng ký</span></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="note">
+        <strong>Lưu ý:</strong> Thời gian chỉnh sửa đăng ký môn học đã kết thúc từ ngày 20/05/2026.
+        Nếu có nhu cầu thay đổi (thêm/hủy môn), vui lòng liên hệ Phòng Đào tạo.
+    </div>
+
+    <center>
+        <button class="btn-disabled" disabled>
+            Không thể thay đổi đăng ký
+        </button>
+    </center>
+
+</div>

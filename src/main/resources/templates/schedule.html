@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div th:fragment="content">
+
+    <style>
+
+        .schedule-title{
+            font-size:22px;
+            font-weight:700;
+            color:#004a99;
+            margin-bottom:15px;
+        }
+
+        .semester{
+            display:inline-block;
+            background:#004a99;
+            color:white;
+            padding:6px 12px;
+            border-radius:5px;
+            font-size:12px;
+            margin-bottom:15px;
+        }
+
+        .schedule-wrapper{
+            overflow-x:auto;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            table-layout:fixed;
+            background:white;
+        }
+
+        thead th{
+            background:#004a99;
+            color:white;
+            border:1px solid #003b7a;
+            padding:8px 4px;
+            font-size:12px;
+            font-weight:600;
+        }
+
+        .day-name{
+            display:block;
+            font-size:12px;
+            font-weight:600;
+        }
+
+        .day-date{
+            display:block;
+            font-size:10px;
+            margin-top:2px;
+            opacity:.9;
+        }
+
+        tbody td{
+            border:1px solid #d9e1ea;
+            height:50px;
+            text-align:center;
+            vertical-align:middle;
+            font-size:11px;
+        }
+
+        .period{
+        width:90px;
+        background:#f8fafc;
+        font-weight:600;
+        font-size:11px;
+        }
+
+        .time{
+        width:120px;
+        background:#f8fafc;
+        font-size:11px;
+        color:#475569;
+        white-space:nowrap;
+        }
+
+        .subject{
+            padding:4px;
+            vertical-align:top;
+        }
+
+        .subject-card{
+            height:100%;
+            padding:6px;
+            border-radius:4px;
+            text-align:left;
+            line-height:1.35;
+        }
+
+        .subject-name{
+            font-size:11px;
+            font-weight:700;
+            margin-bottom:3px;
+        }
+
+        .subject-info{
+            font-size:10px;
+            color:#475569;
+        }
+
+        .pink{
+            background:#ffe7e7;
+            border-left:3px solid #dc2626;
+        }
+
+        .blue{
+            background:#e8f2ff;
+            border-left:3px solid #2563eb;
+        }
+
+        .green{
+            background:#e9f9ea;
+            border-left:3px solid #16a34a;
+        }
+
+        .update-notice{
+            background:#fefce8;
+            border-left:5px solid #eab308;
+            padding:16px;
+            border-radius:8px;
+            margin:20px 0 30px 0;
+            color:#854d0e;
+            font-weight:500;
+        }
+
+    </style>
+
+    <div class="schedule-title">
+        THỜI KHÓA BIỂU
+    </div>
+
+    <div class="semester">
+        Học kỳ 3 - Năm học 2025 - 2026
+    </div>
+
+    <div class="schedule-wrapper">
+
+        <table>
+
+            <thead>
+            <tr>
+
+                <th style="width:70px">Tiết</th>
+
+                <th>
+                    <span class="day-name">Thứ 2</span>
+                    <span class="day-date">15/06</span>
+                </th>
+
+                <th>
+                    <span class="day-name">Thứ 3</span>
+                    <span class="day-date">16/06</span>
+                </th>
+
+                <th>
+                    <span class="day-name">Thứ 4</span>
+                    <span class="day-date">17/06</span>
+                </th>
+
+                <th>
+                    <span class="day-name">Thứ 5</span>
+                    <span class="day-date">18/06</span>
+                </th>
+
+                <th>
+                    <span class="day-name">Thứ 6</span>
+                    <span class="day-date">19/06</span>
+                </th>
+
+                <th>
+                    <span class="day-name">Thứ 7</span>
+                    <span class="day-date">20/06</span>
+                </th>
+
+                <th>
+                    <span class="day-name">Chủ nhật</span>
+                    <span class="day-date">21/06</span>
+                </th>
+
+                <th>
+                    <span class="day-name">Thời gian</span>
+                </th>
+
+            </tr>
+            </thead>
+
+            <tbody>
+
+            <tr>
+                <td class="period">Tiết 1</td>
+
+                <td></td>
+                <td></td>
+                <td></td>
+
+
+                <td rowspan="5" class="subject">
+                    <div class="subject-card pink">
+                        <div class="subject-name">
+                            Lập trình ứng dụng nâng cao (ITEC5501)
+                        </div>
+                        <div class="subject-info">
+                            Nhóm: IT2202<br>
+                            Phòng: NB.PMA405-khu dân cư Nhơn Đức, xã Hiệp Phước, TpHCM<br>
+                            GV: Dương Thị Hồng Hà
+                        </div>
+                    </div>
+                </td>
+
+                <td rowspan="5" class="subject">
+                    <div class="subject-card blue">
+                        <div class="subject-name">
+                            Quảng lí hệ thống mạng (ITEC2604)
+                        </div>
+                        <div class="subject-info">
+                            Nhóm: IM2202<br>
+                            Phòng: NB.A201-khu dân cư Nhơn Đức, xã Hiệp Phước, TpHCM<br>
+                            GV: Nguyễn Tiến Đạt
+                        </div>
+                    </div>
+                </td>
+
+                <td rowspan="5" class="subject">
+                    <div class="subject-card blue">
+                        <div class="subject-name">
+                            Lập trình dữ liệu số (ITEC2043)
+                        </div>
+                        <div class="subject-info">
+                            Nhóm: IT2202<br>
+                            Phòng: NB.PMA403-khu dân cư Nhơn Đức, xã Hiệp Phước, TpHCM<br>
+                            GV: Trần Văn Anh
+                        </div>
+                    </div>
+                </td>
+
+                <td></td>
+
+                <td class="time">07:30 - 08:20</td>
+            </tr>
+
+            <tr>
+                <td class="period">Tiết 2</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="time">08:25 - 09:15</td>
+            </tr>
+
+            <tr>
+                <td class="period">Tiết 3</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="time">09:20 - 10:10</td>
+            </tr>
+
+            <tr>
+                <td class="period">Tiết 4</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="time">10:15 - 11:05</td>
+            </tr>
+
+            <tr>
+                <td class="period">Tiết 5</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="time">11:10 - 12:00</td>
+            </tr>
+
+            <tr>
+                <td class="period">Tiết 6</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td class="time">12:05 - 12:55</td>
+            </tr>
+
+            <tr>
+                <td class="period">Tiết 7</td>
+
+                <td></td>
+                <td></td>
+
+                <td rowspan="5" class="subject">
+                    <div class="subject-card pink">
+                        <div class="subject-name">
+                            Bảo trì hệ thống (ITEC2512)
+                        </div>
+                        <div class="subject-info">
+                            Nhóm: CS2202<br>
+                            Phòng: NB.C203-khu dân cư Nhơn Đức, xã Hiệp Phước, TpHCM<br>
+                            GV: Nguyễn Quang Dũng
+                        </div>
+                    </div>
+                </td>
+
+                <td></td>
+                <td></td>
+
+                <td rowspan="5" class="subject">
+                    <div class="subject-card pink">
+                        <div class="subject-name">
+                            Lập trình dữ liệu số (ITEC2043)
+                        </div>
+                        <div class="subject-info">
+                            Nhóm: IT2202<br>
+                            Phòng: NB.D201-khu dân cư Nhơn Đức, xã Hiệp Phước, TpHCM<br>
+                            GV: Trần văn Anh
+                        </div>
+                    </div>
+                </td>
+
+                <td></td>
+
+                <td class="time">13:05 - 13:55</td>
+            </tr>
+
+            <tr>
+                <td class="period">Tiết 8</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="time">14:00 - 14:50</td>
+            </tr>
+
+            <tr>
+                <td class="period">Tiết 9</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="time">14:55 - 15:45</td>
+            </tr>
+
+            <tr>
+                <td class="period">Tiết 10</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="time">15:50 - 16:40</td>
+            </tr>
+
+            <tr>
+                <td class="period">Tiết 11</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="time">16:45 - 17:35</td>
+            </tr>
+
+            <tr>
+                <td class="period">Tiết 12</td>
+
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+                <td class="time">17:40 - 18:30</td>
+            </tr>
+
+            </tbody>
+
+        </table>
+
+        <div class="update-notice">
+            <strong>📢 Thông báo:</strong> Thời khóa biểu sẽ được cập nhật mới vào lúc <strong>23:00 Chủ Nhật</strong> hàng tuần.
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

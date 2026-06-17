@@ -1,0 +1,41 @@
+<div th:fragment="content">
+    <style>
+        .maintenance-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            text-align: center;
+            padding: 40px;
+            background: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 12px;
+            color: #475569;
+        }
+        .maintenance-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .maintenance-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #004a99;
+            margin-bottom: 10px;
+        }
+        .maintenance-message {
+            font-size: 16px;
+            max-width: 500px;
+        }
+    </style>
+
+    <div class="maintenance-container">
+        <div class="maintenance-icon">🛠️</div>
+        <div class="maintenance-title">Hệ thống đang bảo trì</div>
+        <div class="maintenance-message">
+            Trang bảng điểm hiện không thể truy cập do đang trong quá trình cập nhật dữ liệu.
+            Vui lòng quay lại sau ngày <b>22/06</b> để xem kết quả học tập của bạn.
+            Xin lỗi vì sự bất tiện này!
+        </div>
+    </div>
+</div>

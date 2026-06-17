@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="content" class="home-container">
+    <style>
+        .banner {
+            background: linear-gradient(135deg, #004a99, #007bff);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,74,153,0.2);
+        }
+        .banner h1 { margin: 0; font-size: 2rem; }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s;
+        }
+        .card h3 { color: #2d3748; margin-top: 0; border-bottom: 2px solid #edf2f7; padding-bottom: 10px; }
+        .news-item {
+            padding: 12px 0;
+            border-bottom: 1px solid #f7fafc;
+            color: #4a5568;
+            display: flex;
+            align-items: center;
+        }
+        .news-item i { margin-right: 10px; color: #004a99; }
+    </style>
+
+    <div class="banner">
+        <h1>TRƯỜNG ĐẠI HỌC MỞ TP. HỒ CHÍ MINH</h1>
+        <p>Chào mừng bạn đã đăng nhập vào Hệ thống Quản lý Sinh viên</p>
+    </div>
+
+    <div class="dashboard-grid">
+        <div class="card">
+            <h3><i class="fa-solid fa-bullhorn"></i> Thông báo mới</h3>
+            <div class="news-item"><i class="fa-solid fa-chevron-right"></i> Kế hoạch ĐKMH trực tuyến HK3/25-26</div>
+            <div class="news-item"><i class="fa-solid fa-chevron-right"></i> Hướng dẫn đóng học phí năm học 2025-2026</div>
+            <div class="news-item"><i class="fa-solid fa-chevron-right"></i> Thông báo lịch nghỉ lễ Quốc khánh</div>
+        </div>
+
+        <div class="card">
+            <h3><i class="fa-solid fa-user"></i> Thông tin cá nhân</h3>
+            <div class="news-item"><strong>Họ tên:</strong>Trần Lê Phương Minh</div>
+            <div class="news-item"><strong>MSSV:</strong> 2251052067</div>
+            <div class="news-item"><strong>Lớp:</strong> IT2202</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

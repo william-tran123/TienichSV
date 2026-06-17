@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hệ thống Quản lý Sinh viên - OU</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; display: flex; height: 100vh; background: #f4f7f9; }
+
+        /* Sidebar cố định */
+        .sidebar { width: 260px; background: #004a99; color: white; padding: 20px; flex-shrink: 0; display: flex; flex-direction: column; }
+        .sidebar h3 { font-size: 1.2rem; margin-bottom: 2rem; text-align: center; color: #fff; border-bottom: 1px solid #003366; padding-bottom: 1rem; }
+
+        .menu-item { padding: 15px; color: #cbd5e0; text-decoration: none; display: block; border-radius: 6px; margin-bottom: 8px; transition: 0.3s; }
+        .menu-item:hover { background: #003366; color: white; padding-left: 20px; }
+
+        /* Nội dung chính */
+        .main-content { flex-grow: 1; padding: 30px; overflow-y: auto; }
+
+        /* Container cho các trang con */
+        .page-container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); min-height: 80vh; }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h3>OU Student Portal</h3>
+    <a th:href="@{/students/home}" class="menu-item"><i class="fa-solid fa-house"></i> Trang chủ</a>
+    <a th:href="@{/students/register}" class="menu-item"><i class="fa-solid fa-pen-to-square"></i> Đăng ký môn học</a>
+    <a th:href="@{/students/schedule}" class="menu-item"><i class="fa-solid fa-calendar-days"></i> TKB dạng tuần</a>
+    <a th:href="@{/students/tuition}" class="menu-item"><i class="fa-solid fa-wallet"></i> Xem học phí</a>
+    <a th:href="@{/students/exam-schedule}" class="menu-item"><i class="fa-solid fa-graduation-cap"></i> Lịch thi</a>
+    <a th:href="@{/students/score}" class="menu-item"><i class="fa-solid fa-chart-bar"></i> Bảng điểm</a>
+</div>
+
+<div class="main-content">
+    <div class="page-container">
+        <div th:replace="~{${viewName} :: content}"></div>
+    </div>
+</div>
+
+</body>
+</html>
